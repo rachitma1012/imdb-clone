@@ -14,6 +14,7 @@
         // function to get movies list from the api when something written on the search input
     const getData = async(movie)=>{
          // console.log(movie)
+         try{
         const data = await fetch(`https://www.omdbapi.com/?s=${movie}&apikey=${apikey}`);
     const jsonData = await data.json();
 
@@ -23,10 +24,13 @@
 
 
     }
+}catch(err){
+    console.log(err);
+}
 }
       // function if specific movies search with the help of search button
       const specificmoviesearch = async()=>{
-
+ try{
        let searchvalue = (input.value).trim();
         const data = await fetch(`https://www.omdbapi.com/?t=${searchvalue}&apikey=${apikey}`);
     const jsonData = await data.json();
@@ -41,6 +45,9 @@
         <h3>Please try again/Movie not exist</h3>`;
      }
      input.value='';
+    }catch(err){
+        console.log(err);
+    }
     }
     const result = ()=>{
         let searchItem = (input.value).trim();
@@ -88,11 +95,13 @@
             
                 input.value="";
                 container.innerHTML = "";
-
+                  try{
                  const data = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=${apikey}`);
                  const specificmovie = await data.json();
                  specifunmovieAll(specificmovie)
-                  
+                  }catch(err){
+                    console.log(err);
+                  }
             })
         })
         
