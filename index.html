@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--connection for css file-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+	<!-- nav bar-->
+<nav class="navigation">
+	<span class="title">Imdb</span>
+	 <ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="#"><button onclick="displayFavoriteMovies()" class="btn-btn-favourite">Favourite</button></a></li>
+		
+	</ul> 
+	
+</nav>
+<!--contain search bar and specific search movies-->
+<div class="main">
+	<h1>Search Movies</h1>
+    <input type="text" name="movie" placeholder="search" class="search-box" onkeyup="result()">
+    <button class="btn-btn" onclick="specificmoviesearch()">search</button>
+    <!--container for displaying movies card, when movies is search on input box-->  
+	<div class="container">
+    
+    </div>
+    
+</div>
+<!--container for specific movies -->
+<div class="specific-container-movie">
+    
+</div> 
+<!--container for  favorite movies-->
+<div class="displaylistofmovies"></div>
+    
+  <!--connection to the javascript file-->
+<script src="script.js">
+	
+</script>
+</body>
+</html>
