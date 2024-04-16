@@ -1,0 +1,35 @@
+
+/* css of the container containing the favourite movies */
+.collection{
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+
+}
+/* css for show movies button */
+.show-button{
+display: flex;
+justify-content: center;
+margin-top:6px;
+}
+.show-button button{
+height: 50px;
+width: 150px;
+border: 1px solid aliceblue;
+color: aliceblue;
+background: linear-gradient(75deg,#002D62,#00308F);
+backdrop-filter: blur(5px);
+cursor: pointer;
+}
+.nofav-movies{
+color: aliceblue;
+}
+.nofav-movies a{
+
+color: aliceblue;
+}
