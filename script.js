@@ -14,7 +14,7 @@
         // function to get movies list from the api when something written on the search input
     const getData = async(movie)=>{
          // console.log(movie)
-        const data = await fetch(`https://www.omdbapi.com/?s=${movie}&apikey=${apikey}`);
+        const data = await fetch(`http://www.omdbapi.com/?s=${movie}&apikey=${apikey}`);
     const jsonData = await data.json();
 
     if(jsonData.Response=="True"){
@@ -28,7 +28,7 @@
       const specificmoviesearch = async()=>{
 
        let searchvalue = (input.value).trim();
-        const data = await fetch(`https://www.omdbapi.com/?t=${searchvalue}&apikey=${apikey}`);
+        const data = await fetch(`http://www.omdbapi.com/?t=${searchvalue}&apikey=${apikey}`);
     const jsonData = await data.json();
     console.log(jsonData);
      if(jsonData.Title){
@@ -89,7 +89,7 @@
                 input.value="";
                 container.innerHTML = "";
 
-                 const data = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=${apikey}`);
+                 const data = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=${apikey}`);
                  const specificmovie = await data.json();
                  specifunmovieAll(specificmovie)
                   
@@ -132,7 +132,7 @@
        }
        // function to add movies in the favourites
        function addToFavorites(imdbID) {
-       const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=${apikey}`;
+       const url = `http://www.omdbapi.com/?i=${imdbID}&apikey=${apikey}`;
     
        fetch(url).then(response => response.json()).then(data => {
           const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
